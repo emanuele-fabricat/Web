@@ -9,7 +9,7 @@ body {
     background-color: #e4e4e4;
 }
 
-body > header {
+body > header, body > footer {
     background-color: rgb(54, 54, 54);
     color: #fff;
     text-align: center;
@@ -47,7 +47,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover, main > article > a:hover{
+nav ul li a:hover, main > article > a:hover, form input[type="submit"]:hover{
     color: rgb(219, 69, 83);
 }
 
@@ -58,15 +58,18 @@ body > main{
 main > h2{
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
 }
 
-main > article{
+main > article, main > section, main > form{
     background-color: #fff;
     border: 1px solid #cacaca;
     margin-bottom: 20px;
     padding: 0 5% 20px;
     text-align: center;
 }
+
+/*HOME*/
 
 main > article > img{
     max-width: 100%;
@@ -86,7 +89,7 @@ main > article > p:nth-of-type(2){
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-main > article > a{
+main > article > a, form input[type="submit"]{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
     background-color: #e4e4e4;
@@ -95,8 +98,63 @@ main > article > a{
     border-radius: 5px;
 }
 
+/*CONTATTI*/
+
+main > section > table th{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+table th, table td{
+    border: 1px solid #000;
+    padding: 5px, 0;
+}
+
+main > form{
+    padding-top: 20px;
+}
+
+/*LOGIN*/
+
+form ul{
+    list-style: none;
+    width: 80%;
+    margin: 0 10%;
+}
+
+form ul li{
+    margin-bottom: 20px;
+}
+
+form ul li:last-child{
+    text-align: right;
+}
+
+form ul li label{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    cursor: pointer;
+}
+
+form ul li input:not([type="submit"]){
+    width: 50%;
+    box-sizing: border-box;
+}
+
+form ul li input[type="submit"]{
+    cursor: pointer;
+    border-width: 0;
+}
+
 aside{
-    margin: 0 5%;
+    margin: 0 5% 20px;
     border: 1px solid #cacaca;
     background-color: #fff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -122,4 +180,38 @@ aside > section > ul > li > img{
 aside > section > ul > li > a{
     text-decoration: none;
     font-weight: bold;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    nav{
+        margin: 0 10%;
+    }
+    
+    nav ul li{
+        width: 19%;
+    }
+
+    nav ul li:not(:last-child){
+        margin-right: 8%;
+    }
+
+    main, aside {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    body > main {
+        width: 50%;
+        margin: 0 0 0 10%;
+    }
+
+    aside {
+        width: 25%;
+        margin-top: 77px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
 }
