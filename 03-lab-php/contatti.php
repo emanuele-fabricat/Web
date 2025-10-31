@@ -3,13 +3,12 @@
 
     //base template
     $templateParams["titolo"] = "Blog Tw - Home";
-    $templateParams["nome"] = "lista-articoli.php";
+    $templateParams["nome"] = "tabella-autori.php";
     $templateParams["articolicasuali"] = $dbh->getRandomPosts(2);
     $templateParams["categorie"] = $dbh->getCategories();
 
     //tameplate specific
-    $templateParams["articoli"] = $dbh->getPosts(2);
-    $templateParams["titolo_pagina"] = "Ultimi Articoli";
+    $templateParams["autori"] = $dbh->getAutors();
 
     require("template/base.php")
 ?>
