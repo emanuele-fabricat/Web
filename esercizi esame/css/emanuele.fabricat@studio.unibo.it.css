@@ -1,0 +1,26 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: monospace;
+    font-size: 100%;
+}
+
+body header {
+    background: linear-gradient(to bottom right, pink, yellow, pink, purple );
+    border-bottom: 2px solid purple;
+    width: 100%;
+    color: purple;
+    text-align: right;
+    padding: 2% 0px;
+}
+
+body section {
+    width: 50%;
+}
+
+body nav {
+    width: 15%;
+}
+
+body aside {
+    width: 20%;
+}
