@@ -4,23 +4,75 @@ body {
     font-size: 100%;
 }
 
-body header {
+body header, body nav {
     background: linear-gradient(to bottom right, pink, yellow, pink, purple );
     border-bottom: 2px solid purple;
+}
+
+body header {
     width: 100%;
     color: purple;
     text-align: right;
-    padding: 2% 0px;
+    padding: 25px 0%;
 }
+
+body section, body nav, body aside {
+    display: inline-block;
+} 
 
 body section {
     width: 50%;
+    margin: 20px 1% 0px 4% ;
 }
 
 body nav {
+    float: left;
     width: 15%;
+    border-top: 2px solid purple;
+    margin: 10px 4% 0px 1%;
+    
+}
+
+body nav:hover {
+    background: linear-gradient(to bottom right, purple, pink, yellow, pink);
+}
+
+body nav ul {
+    list-style: square;
+}
+
+body nav ul li a{
+    text-align: left;
+    line-height: 2;
+}
+
+body nav ul li a:hover {
+    background-color: purple;
+    color: white;
+    padding: 1%;
+    font-weight: bold;
 }
 
 body aside {
+    float: left;
     width: 20%;
+    margin: 20px 2.5% ;
+}
+
+body aside p {
+    color: purple;
+}
+
+body footer {
+    background: linear-gradient(to top left, pink, yellow, pink, purple);
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px 0%;
+    border-top: 2px solid purple;
+}
+
+body footer p {
+    color: purple;
+    text-align: center;
+    font-size: 80%;
 }
