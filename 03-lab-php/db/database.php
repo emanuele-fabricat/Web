@@ -42,12 +42,12 @@
         }
 
         public function getAutors(){
-            $stmt = $this->db->prepare("SELECT nome, username, GRUOP_CONCUT(DISTINCT nomeCategoria SEPARATOR ', ') AS nomeCategoria FROM autore, articolo, articolo_ha_categoria, categoria WHERE idautore=autore AND idarticolo=articolo AND idcategoria=categoria GROUP BY nome, username");
+            $stmt = $this->db->prepare("SELECT nome, username, GROUP_CONCAT(DISTINCT nomeCategoria SEPARATOR ', ') AS nomeCategoria FROM autore, articolo, articolo_ha_categoria, categoria WHERE idautore=autore AND idarticolo=articolo AND idcategoria=categoria GROUP BY nome, username");
             $stmt->execute();
             $result = $stmt->get_result();
 
             return $result->fetch_all(MYSQLI_ASSOC);
-        }
+        }   
 
     }
 ?>

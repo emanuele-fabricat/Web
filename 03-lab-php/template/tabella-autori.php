@@ -8,10 +8,16 @@
         </tr>
         <?php foreach ($templateParams["autori"] as $autori): ?>
             <tr>
-                <th id=<?php echo $autori["nome"]; ?>><?php echo $autori["nome"]; ?></th>
-                <td headers="email <?php echo $autori["nome"]; ?>"><?php echo $autori["username"]; ?></td>
-                <td headers="argomenti <?php echo $autori["nome"]; ?>"><?php echo $autori["nomeCategoria"]; ?></td>
+                <th id= "getIdFromName(<?php echo $autori["nome"]; ?>)"><?php echo $autori["nome"]; ?></th>
+                <td headers="email  getIdFromName(<?php echo $autori["nome"]; ?>)"><?php echo $autori["username"]; ?></td>
+                <td headers="argomenti  getIdFromName(<?php echo $autori["nome"]; ?>)"><?php echo $autori["nomeCategoria"]; ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
 </section>
+
+<?php
+    function getIdFromName($name) {
+        return preg_replace("/[^a-z]/",'',strtolower($name));
+    }
+?>
