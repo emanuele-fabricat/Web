@@ -59,5 +59,25 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function getCategoryByid($id) {
+            $query = "SELECT idarticolo FROM articolo, articolo_ha_categoria WHERE categoria = ? AND idarticolo = articolo";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getNameCategoryById($id) {
+            $query = "SELECT nomecategoria FROM categoria WHERE idcategoria = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);            
+        }
+
     }
 ?>
