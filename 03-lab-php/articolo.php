@@ -8,7 +8,11 @@
     $templateParams["categorie"] = $dbh->getCategories();
 
     //tameplate specific
-    $templateParams["autori"] = $dbh->getAutors();
+    $idArticolo = -1;
+    if (isset($_GET["id"])) {
+        $idArticolo = $_GET["id"];
+    }
+    $templateParams["articolo"] = $dbh->getPostById($idArticolo);
 
     require("template/base.php")
 ?>

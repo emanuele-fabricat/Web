@@ -47,7 +47,17 @@
             $result = $stmt->get_result();
 
             return $result->fetch_all(MYSQLI_ASSOC);
-        }   
+        }
+
+        public function getPostById($id){
+            $query = "SELECT idarticolo, titoloarticolo, testoarticolo, dataarticolo, imgarticolo, nome FROM articolo, autore WHERE autore = idautore AND idarticolo = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
 
     }
 ?>

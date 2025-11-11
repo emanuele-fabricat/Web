@@ -13,7 +13,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li><li><a href="archivio.html">Archivio</a></li><li><a href="contatti.html">Contatti</a></li><li><a href="login.html">Login</a></li>
+            <li><a href="index.php">Home</a></li><li><a href="archivio.php">Archivio</a></li><li><a href="contatti.php">Contatti</a></li><li><a href="login.php">Login</a></li>
         </ul>
     </nav>
     <main>
@@ -28,7 +28,7 @@
                 <?php foreach ($templateParams["articolicasuali"] as $articolocasuale): ?>
                     <li>
                         <img src="<?php echo UPLOAD_DIR . $articolocasuale["imgarticolo"]; ?>" alt="" />
-                        <a href="#"><?php echo $articolocasuale["titoloarticolo"]; ?></a>
+                        <a href="articolo.php?id=<?php echo $articolocasuale["idarticolo"]; ?>"><?php echo $articolocasuale["titoloarticolo"]; ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
