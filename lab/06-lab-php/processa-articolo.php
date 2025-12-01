@@ -1,7 +1,6 @@
 <?php
 require_once 'bootstrap.php';
 
-var_dump($_POST);
 
 if (!isUserLoggedIn() || !isset($_POST["action"])) {
     //header("location: login.php");
